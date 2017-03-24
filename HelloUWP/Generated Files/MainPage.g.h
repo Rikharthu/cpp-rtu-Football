@@ -24,7 +24,7 @@ namespace Microsoft {
         namespace Canvas {
             namespace UI {
                 namespace Xaml {
-                    ref class CanvasControl;
+                    ref class CanvasAnimatedControl;
                 }
             }
         }
@@ -47,7 +47,7 @@ namespace HelloUWP
         bool _contentLoaded;
     
         private: ::Windows::UI::Xaml::Controls::StackPanel^ contentPanel;
-        private: ::Microsoft::Graphics::Canvas::UI::Xaml::CanvasControl^ canvas;
+        private: ::Microsoft::Graphics::Canvas::UI::Xaml::CanvasAnimatedControl^ canvas;
         private: ::Windows::UI::Xaml::Controls::StackPanel^ inputPanel;
         private: ::Windows::UI::Xaml::Controls::TextBlock^ greetingOutput;
         private: ::Windows::UI::Xaml::Controls::TextBox^ nameInput;

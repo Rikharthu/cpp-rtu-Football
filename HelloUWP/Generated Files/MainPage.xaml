@@ -25,10 +25,10 @@
                        FontSize="18" Style="{StaticResource BaseTextBlockStyle}"/>
         </StackPanel>
 
-        <canvas:CanvasControl x:ConnectionId='2' 
+        <canvas:CanvasAnimatedControl x:ConnectionId='2' 
             Name="canvas"
             Grid.Row="1"
-                                      
+                                              
             ClearColor="CornflowerBlue"/>
 
     </Grid>

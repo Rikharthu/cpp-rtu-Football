@@ -34,9 +34,9 @@ void ::HelloUWP::MainPage::Connect(int __connectionId, ::Platform::Object^ __tar
             break;
         case 2:
             {
-                this->canvas = safe_cast<::Microsoft::Graphics::Canvas::UI::Xaml::CanvasControl^>(__target);
-                (safe_cast<::Microsoft::Graphics::Canvas::UI::Xaml::CanvasControl^>(this->canvas))->Draw += ref new ::Windows::Foundation::TypedEventHandler<::Microsoft::Graphics::Canvas::UI::Xaml::CanvasControl^, ::Microsoft::Graphics::Canvas::UI::Xaml::CanvasDrawEventArgs^>(this, (void (::HelloUWP::MainPage::*)
-                    (::Microsoft::Graphics::Canvas::UI::Xaml::CanvasControl^, ::Microsoft::Graphics::Canvas::UI::Xaml::CanvasDrawEventArgs^))&MainPage::CanvasControl_Draw);
+                this->canvas = safe_cast<::Microsoft::Graphics::Canvas::UI::Xaml::CanvasAnimatedControl^>(__target);
+                (safe_cast<::Microsoft::Graphics::Canvas::UI::Xaml::CanvasAnimatedControl^>(this->canvas))->Draw += ref new ::Windows::Foundation::TypedEventHandler<::Microsoft::Graphics::Canvas::UI::Xaml::ICanvasAnimatedControl^, ::Microsoft::Graphics::Canvas::UI::Xaml::CanvasAnimatedDrawEventArgs^>(this, (void (::HelloUWP::MainPage::*)
+                    (::Microsoft::Graphics::Canvas::UI::Xaml::ICanvasAnimatedControl^, ::Microsoft::Graphics::Canvas::UI::Xaml::CanvasAnimatedDrawEventArgs^))&MainPage::CanvasAnimatedControl_Draw);
             }
             break;
         case 3:

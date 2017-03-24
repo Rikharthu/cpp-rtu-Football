@@ -25,10 +25,10 @@
                        FontSize="18" Style="{StaticResource BaseTextBlockStyle}"/>
         </StackPanel>
 
-        <canvas:CanvasControl 
+        <canvas:CanvasAnimatedControl 
             Name="canvas"
             Grid.Row="1"
-            Draw="CanvasControl_Draw" 
+            Draw="CanvasAnimatedControl_Draw" 
             ClearColor="CornflowerBlue"/>
 
     </Grid>
