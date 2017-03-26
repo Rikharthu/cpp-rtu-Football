@@ -72,15 +72,13 @@ public:
 		this->direction = direction;
 
 		while (speed > 0) {
-			int tmpX = center_x + speed*cos(direction);;
-			int tmpY = center_y - speed*sin(direction);
-			if (!isInside(tmpX, tmpY)) {
-				if (!isOutHorizontally(tmpX)) {
-					// horizontally
-				}
-				else {
-					// vertically 
-				}
+			int next_x = center_x + speed*cos(direction);
+			int next_y = center_y - speed*sin(direction);
+			center_x = next_x;
+			center_y = next_y;
+			if (!isInside(next_x, next_y)) {
+				int a = 4;
+				direction = -direction;
 			}
 			Sleep(50);
 			speed -= slowdown;
