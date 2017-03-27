@@ -18,11 +18,17 @@
             <TextBlock HorizontalAlignment="Left" Text="Hello World" FontSize="36"/>
             <TextBlock Text="What's your name?" FontSize="18" Style="{StaticResource BaseTextBlockStyle}"/>
             <StackPanel x:ConnectionId='3' x:Name="inputPanel" Orientation="Horizontal" Margin="0,20,0,20">
-                <TextBox x:ConnectionId='5' x:Name="nameInput" Width="300" HorizontalAlignment="Left"/>
-                <Button x:ConnectionId='6' x:Name="inputButton" Content="Say &quot;Hello&quot;"                           />
+                <TextBox x:ConnectionId='5' x:Name="nameInput"
+                         Width="300"
+                         HorizontalAlignment="Left" />
+                <TextBox x:ConnectionId='6' x:Name="powerInput"
+                         Width="300"
+                         HorizontalAlignment="Left" />
+                <Button x:ConnectionId='7' x:Name="inputButton" Content="Say &quot;Hello&quot;"                           />
             </StackPanel>
             <TextBlock x:ConnectionId='4' x:Name="greetingOutput"
-                       FontSize="18" Style="{StaticResource BaseTextBlockStyle}"/>
+                       FontSize="18"
+                       Style="{StaticResource BaseTextBlockStyle}" />
         </StackPanel>
 
         <canvas:CanvasAnimatedControl x:ConnectionId='2' 

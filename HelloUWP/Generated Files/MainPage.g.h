@@ -51,6 +51,7 @@ namespace HelloUWP
         private: ::Windows::UI::Xaml::Controls::StackPanel^ inputPanel;
         private: ::Windows::UI::Xaml::Controls::TextBlock^ greetingOutput;
         private: ::Windows::UI::Xaml::Controls::TextBox^ nameInput;
+        private: ::Windows::UI::Xaml::Controls::TextBox^ powerInput;
         private: ::Windows::UI::Xaml::Controls::Button^ inputButton;
     };
 }

@@ -4,7 +4,9 @@
 #include "MainPage.xaml.h"
 #include <windows.h>
 #include <math.h>
-
+#include <thread> 
+#define PI 3.14159265358979323846
+using namespace std;
 using namespace HelloUWP;
 using namespace Platform;
 using namespace Windows::Foundation;
@@ -29,11 +31,12 @@ private:
 	int center_x, center_y;
 	float direction;
 	float speed;
-	float slowdown=0.05f;
+	float slowdown=0.1f;
 	int min_x;
 	int min_y;
 	int max_x;
 	int max_y;
+	thread worker;
 
 public:
 	Ball(int radius):Drawable(width*2,width*2), radius(radius) {
@@ -63,10 +66,6 @@ public:
 		return x >= min_x && x <= max_x && y >= min_y && y <= max_y;
 	}
 
-	bool isOutHorizontally(int x) {
-		return x<min_x || x>max_x;
-	}
-
 	virtual void move(float speed, float direction) {
 		this->speed = speed;
 		this->direction = direction;
@@ -74,14 +73,22 @@ public:
 		while (speed > 0) {
 			int next_x = center_x + speed*cos(direction);
 			int next_y = center_y - speed*sin(direction);
-			center_x = next_x;
-			center_y = next_y;
 			if (!isInside(next_x, next_y)) {
-				int a = 4;
-				direction = -direction;
+				if (isOutHorizontally(next_x)) {
+					direction = PI - direction;
+				}
+				else {
+					// vertically
+					direction = -direction;
+				}
+				// recalculate with new direction
+				next_x = center_x + speed*cos(direction);
+				next_y = center_y - speed*sin(direction);
 			}
 			Sleep(50);
 			speed -= slowdown;
+			center_x = next_x;
+			center_y = next_y;
 		}
 	}
 
@@ -91,5 +98,10 @@ public:
 		this->max_x = max_x;
 		this->max_y = max_y;
 	}
+
+	bool isOutHorizontally(int x) {
+		return x < min_x || x > max_x;
+	}
+
 
 };

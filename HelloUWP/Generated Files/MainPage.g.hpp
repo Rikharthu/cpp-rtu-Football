@@ -56,6 +56,11 @@ void ::HelloUWP::MainPage::Connect(int __connectionId, ::Platform::Object^ __tar
             break;
         case 6:
             {
+                this->powerInput = safe_cast<::Windows::UI::Xaml::Controls::TextBox^>(__target);
+            }
+            break;
+        case 7:
+            {
                 this->inputButton = safe_cast<::Windows::UI::Xaml::Controls::Button^>(__target);
                 (safe_cast<::Windows::UI::Xaml::Controls::Button^>(this->inputButton))->Click += ref new ::Windows::UI::Xaml::RoutedEventHandler(this, (void (::HelloUWP::MainPage::*)
                     (::Platform::Object^, ::Windows::UI::Xaml::RoutedEventArgs^))&MainPage::Hello_Button_Click);
